@@ -1,14 +1,23 @@
 import React from 'react';
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, ExternalLink } from 'lucide-react';
 
 export default function Credentials() {
   const certifications = [
+    {
+      title: 'Oracle Cloud Infrastructure Certified AI Foundations Associate',
+      issuer: 'Oracle',
+      desc: 'Foundational AI & ML concepts, OCI AI & Machine Learning services, Generative AI models, Large Language Models (LLMs), and cloud AI architecture.',
+      badge: 'ORACLE CERTIFIED',
+      color: 'border-sky-200 text-sky-800 bg-sky-50',
+      link: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=2841404E6F6A15819DB8CC885F53A931C759E50F88BC5C8462AECF2484975BB6',
+    },
     {
       title: 'Applied Machine Learning',
       issuer: 'Coursera',
       desc: 'Hands-on supervised & unsupervised learning, model diagnostics, feature engineering, and regularization techniques.',
       badge: 'COURSERA VERIFIED',
       color: 'border-emerald-200 text-emerald-800 bg-emerald-50',
+      link: 'https://www.coursera.org/account/accomplishments/verify/VLGENQFOP204',
     },
     {
       title: 'Cloud Computing',
@@ -89,18 +98,45 @@ export default function Credentials() {
               {certifications.map((cert, idx) => (
                 <div
                   key={idx}
-                  className="glass-panel glass-panel-hover rounded-2xl p-5 border border-[#dcd8c9] bg-white space-y-3"
+                  className="glass-panel glass-panel-hover rounded-2xl p-5 border border-[#dcd8c9] bg-white space-y-3 relative group"
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h4 className="text-base font-bold text-slate-900">{cert.title}</h4>
-                      <p className="text-xs text-emerald-700 font-bold font-mono mt-0.5">{cert.issuer}</p>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-base font-bold text-slate-900 leading-snug">
+                        {cert.link ? (
+                          <a
+                            href={cert.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:text-emerald-700 hover:underline inline-flex items-center gap-1.5 transition-colors"
+                          >
+                            <span>{cert.title}</span>
+                            <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-700 shrink-0 inline" />
+                          </a>
+                        ) : (
+                          <span>{cert.title}</span>
+                        )}
+                      </h4>
+                      <p className="text-xs text-emerald-700 font-bold font-mono mt-1">{cert.issuer}</p>
                     </div>
-                    <span className={`px-2.5 py-1 rounded font-mono text-[10px] uppercase font-bold border ${cert.color}`}>
+                    <span className={`px-2.5 py-1 rounded font-mono text-[10px] uppercase font-bold border shrink-0 ${cert.color}`}>
                       {cert.badge}
                     </span>
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed">{cert.desc}</p>
+                  {cert.link && (
+                    <div className="pt-2 border-t border-slate-100 flex items-center justify-end">
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 text-[11px] font-mono font-bold text-emerald-700 hover:text-emerald-900 hover:underline transition-colors"
+                      >
+                        <span>Verify Badge / Credential</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

@@ -105,11 +105,43 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <Award className="w-4 h-4" />
                   <span>CERTIFICATIONS & LEADERSHIP</span>
                 </div>
-                <ul className="text-xs text-slate-700 space-y-1">
-                  <li>• Applied Machine Learning — Coursera</li>
-                  <li>• Cloud Computing — NPTEL, IIT Kharagpur</li>
-                  <li>• Discipline Lead — Marathi Club (15 team, 500+ participants)</li>
-                  <li>• Event Management Team — WinterFest '24</li>
+                <ul className="text-xs text-slate-700 space-y-1.5">
+                  <li className="flex items-start gap-1.5">
+                    <span className="shrink-0">•</span>
+                    <a
+                      href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=2841404E6F6A15819DB8CC885F53A931C759E50F88BC5C8462AECF2484975BB6"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-slate-900 font-semibold hover:text-emerald-700 hover:underline inline-flex items-center gap-1 transition-colors"
+                    >
+                      <span>OCI AI Foundations Associate — Oracle</span>
+                      <ExternalLink className="w-3 h-3 text-emerald-600 shrink-0" />
+                    </a>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="shrink-0">•</span>
+                    <a
+                      href="https://www.coursera.org/account/accomplishments/verify/VLGENQFOP204"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-slate-900 font-semibold hover:text-emerald-700 hover:underline inline-flex items-center gap-1 transition-colors"
+                    >
+                      <span>Applied Machine Learning — Coursera</span>
+                      <ExternalLink className="w-3 h-3 text-emerald-600 shrink-0" />
+                    </a>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="shrink-0">•</span>
+                    <span>Cloud Computing — NPTEL, IIT Kharagpur</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="shrink-0">•</span>
+                    <span>Discipline Lead — Marathi Club (15 team, 500+ participants)</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="shrink-0">•</span>
+                    <span>Event Management Team — WinterFest '24</span>
+                  </li>
                 </ul>
               </div>
             </div>

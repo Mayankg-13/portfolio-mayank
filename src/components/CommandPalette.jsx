@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, ArrowRight, FileText, Mail } from 'lucide-react';
+import { Search, ArrowRight, FileText, Mail, Award } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export default function CommandPalette({ isOpen, onClose, onOpenResume }) {
@@ -30,6 +30,8 @@ export default function CommandPalette({ isOpen, onClose, onOpenResume }) {
     { type: 'project', label: 'HARMONY (Multilingual RAG Health Assistant)', href: '#projects', icon: ArrowRight },
     { type: 'section', label: 'Skills & Toolkit', href: '#skills', icon: ArrowRight },
     { type: 'section', label: 'Education (VIT Bhopal CGPA 8.52/10)', href: '#education', icon: ArrowRight },
+    { type: 'certification', label: 'Oracle Cloud Infrastructure Certified AI Foundations Associate', href: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=2841404E6F6A15819DB8CC885F53A931C759E50F88BC5C8462AECF2484975BB6', external: true, icon: Award },
+    { type: 'certification', label: 'Applied Machine Learning (Coursera Verified)', href: 'https://www.coursera.org/account/accomplishments/verify/VLGENQFOP204', external: true, icon: Award },
     { type: 'section', label: 'Leadership & Activities', href: '#leadership', icon: ArrowRight },
     { type: 'section', label: 'Contact & Hire Mayank', href: '#contact', icon: Mail },
     { type: 'action', label: 'View & Download Resume PDF', action: () => { onClose(); onOpenResume(); }, icon: FileText },
